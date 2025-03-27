@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Caption Generator</title>
+    <style>
+        body { padding: 10px; width: 300px; margin: 0; }
+        .controls, .status, .caption-container { margin: 10px 0; }
+        body.minimized {
+            width: 40px;
+            height: 40px;
+            background: #007bff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        body.minimized .controls, body.minimized .status, body.minimized .caption-container, body.minimized h2 {
+            display: none;
+        }
+        #toggleBtn { display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <h2>Audio Caption Generator</h2>
+    <div class="controls">
+        <button id="startBtn">Start Capturing Tab Audio</button>
+        <button id="stopBtn" disabled>Stop Capturing</button>
+    </div>
+    <button id="toggleBtn">Minimize</button>
+    <div class="status">
+        <span id="status">Ready</span>
+    </div>
+    <div class="caption-container">
+        <h3>Caption:</h3>
+        <div id="caption" class="caption-text"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
